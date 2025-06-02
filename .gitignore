@@ -1,18 +1,21 @@
+# === Maven ===
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+*.jar
 
-### IntelliJ IDEA ###
+# === IntelliJ IDEA ===
+.idea/
+*.iml
+*.iws
+*.ipr
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
-*.iws
-*.iml
-*.ipr
 
-### Eclipse ###
+# === Eclipse ===
 .apt_generated
 .classpath
 .factorypath
@@ -21,7 +24,7 @@ target/
 .springBeans
 .sts4-cache
 
-### NetBeans ###
+# === NetBeans ===
 /nbproject/private/
 /nbbuild/
 /dist/
@@ -31,8 +34,29 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-### VS Code ###
+# === VS Code ===
 .vscode/
 
-### Mac OS ###
+# === OS Files ===
 .DS_Store
+Thumbs.db
+
+# === Logs & Reports ===
+*.log
+TEST*.xml
+
+# === Executables / Apps ===
+*.exe
+*.app
+*.war
+
+# === Media (Optional) ===
+*.mp4
+*.tiff
+*.avi
+*.flv
+*.mov
+*.wmv
+
+# === Node Artifacts (only if using Node) ===
+node_modules/
