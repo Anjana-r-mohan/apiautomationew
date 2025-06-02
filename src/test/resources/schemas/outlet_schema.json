@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["Result", "Reason", "Data"],
+  "properties": {
+    "Result": { "type": ["string", "null", "boolean"] },
+    "Reason": { "type": ["string", "null"] },
+    "Data": {
+      "type": "object",
+      "required": ["id", "name", "outletdata", "childOutlets", "isEntitylimitationEnabled"],
+      "properties": {
+        "panno": { "type": ["string", "null"] },
+        "id": { "type": "string" },
+        "gstinno": { "type": ["string", "null"] },
+        "address": { "type": ["string", "null"] },
+        "name": { "type": "string" },
+        "customoutletdata": { "type": "array" },
+        "outletdata": {
+          "type": "object",
+          "required": ["id", "transactionid", "name", "state_id", "pin"],
+          "properties": {
+            "id": { "type": "string" },
+            "transactionid": { "type": "string" },
+            "name": { "type": "string" },
+            "buildingno": { "type": ["string", "null"] },
+            "address": { "type": "string" },
+            "phoneno": { "type": "string" },
+            "email": { "type": "string" },
+            "ownername": { "type": "string" },
+            "ownermobile": { "type": "string" },
+            "cooler": { "type": "string" },
+            "approved": { "type": "string" },
+            "approved_user_id": { "type": "string" },
+            "created": { "type": "string" },
+            "modified": { "type": "string" },
+            "type": { "type": ["string", "null"] },
+            "state_id": { "type": "string" },
+            "pin": { "type": "string" }
+          }
+        },
+        "childOutlets": { "type": "array" },
+        "isEntitylimitationEnabled": { "type": ["string", "null", "boolean"] }
+      }
+    }
+  }
+}
