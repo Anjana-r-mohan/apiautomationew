@@ -138,8 +138,8 @@
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
-            <version>8.0.33</version> <!-- Or latest version -->
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.29</version> <!-- Or latest version -->
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
