@@ -8,6 +8,7 @@
     <artifactId>BizomRetailer</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
+
     <profiles>
         <profile>
             <id>Bizom_API_Full_Sanity</id>
@@ -27,6 +28,9 @@
             </build>
         </profile>
     </profiles>
+
+
+
     <name>BizomRetailer</name>
     <url>http://maven.apache.org</url>
     <properties>
