@@ -1,21 +1,17 @@
 package com.Retailer.Test;
 
-import com.Retailer.Endpoints.Outlets;
-import com.Retailer.Utilities.ApiTestUtils;
+import com.Retailer.Endpoints.EntityRule;
 
+import com.Retailer.Utilities.ApiTestUtils;
 import io.restassured.RestAssured;
 import io.restassured.config.HttpClientConfig;
 import io.restassured.response.Response;
 import org.apache.http.params.CoreConnectionPNames;
-
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
-
-
 @Listeners(com.Retailer.Utilities.TestListener.class)
-public class OutletTest {
+public class EntityRuleTest {
     private Response response;
 
     @BeforeClass
@@ -26,17 +22,17 @@ public class OutletTest {
                         .setParam(CoreConnectionPNames.CONNECTION_TIMEOUT, 5000)
                         .setParam(CoreConnectionPNames.SO_TIMEOUT, 5000));
 
-        response = Outlets.Getoutlets();
+        response = EntityRule.GetEntityRuleDetails();
     }
 
     @Test(priority = 1)
-    public void GetoutletTest() {
+    public void GetEntityRuleDetails() {
         ApiTestUtils.assertStatusCode200(response);
     }
 
     @Test
-    public void validateOutletSchema() {
-        ApiTestUtils.validateJsonSchema(response, "schemas/outlet_schema.json");
+    public void validateEntitySchema() {
+        ApiTestUtils.validateJsonSchema(response, "schemas/EntityRule.json");
 
     }
 

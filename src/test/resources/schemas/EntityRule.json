@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "Result": {
+      "type": "boolean"
+    },
+    "Errors": {
+      "type": "string"
+    },
+    "Data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "isPrimary": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "phoneNo": {
+            "type": "string"
+          }
+        },
+        "required": ["id", "isPrimary", "name", "address", "phoneNo"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["Result", "Errors", "Data"],
+  "additionalProperties": false
+}

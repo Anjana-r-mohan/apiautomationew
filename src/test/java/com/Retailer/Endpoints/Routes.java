@@ -8,13 +8,28 @@ import com.Retailer.Utilities.Generate_Token;
  * Version         : 1.0.0
  **/
 public class Routes {
-    public static String base_url = "https://devbizomqa.bizomdev.in/";
+    public static String base_url = "https://devretailtwo.bizomdev.in/";
+
+    // Return fresh token
     public static String getToken() {
         return Generate_Token.getNewAccessToken();
     }
-    public static String token = "45904146ee2e9e73b77dd225033020ef2a6b96dc";
 
-    // User Module
-    public static String GET_OUTLET_AND_CHILD_OUTLET = base_url+"outlets/getOutletAndChildOutlet/2?access_token=" + getToken();
+    // Use methods to construct the full API URLs with fresh tokens
+    public static String getOutletAndChildOutlet(String outletId) {
+        return base_url + "outlets/getOutletAndChildOutlet/" + outletId + "?access_token=" + getToken();
+    }
+
+    public static String getEntityRuleDetails(String ruleId) {
+        return base_url + "entityruledetails/getEntityruleDetails/" + ruleId + "?access_token=" + getToken();
+    }
+
+    public static String getInfo() {
+        return base_url + "companies/getinfo?access_token=" + getToken();
+    }
+
+    public static String getCompanyKyc() {
+        return base_url + "companies/getCompanyKycForm?access_token=" + getToken();
+    }
 
 }
