@@ -1,0 +1,15 @@
+{
+  "id": 1944,
+  "name": "Sintex",
+  "logoUrl": "",
+  "status": "ACTIVE",
+  "paymentEnabled": "INACTIVE",
+  "autoOnboarding": false,
+  "setting": null,
+  "currency": null,
+  "currencyName": null,
+  "supportPhoneNumber": null,
+  "countryCode": "91",
+  "allowRetailerDataUpdate": false,
+  "runAutoAssociationBatchJob": false
+}

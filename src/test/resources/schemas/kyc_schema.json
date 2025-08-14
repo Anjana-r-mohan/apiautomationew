@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "Result": {
+      "type": "string"
+    },
+    "Reason": {
+      "type": "string"
+    },
+    "CompanyKyc": {
+      "type": "object",
+      "properties": {
+        "company_id": {
+          "type": "string"
+        },
+        "kycForm": {
+          "type": ["null", "object"]
+        }
+      },
+      "required": ["company_id", "kycForm"]
+    }
+  },
+  "required": ["Result", "Reason", "CompanyKyc"]
+}

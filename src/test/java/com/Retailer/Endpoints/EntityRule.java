@@ -1,6 +1,5 @@
 package com.Retailer.Endpoints;
 
-import com.Retailer.Utilities.Generate_Token;
 import io.restassured.RestAssured;
 import io.restassured.config.HttpClientConfig;
 import io.restassured.response.Response;
@@ -8,13 +7,14 @@ import org.apache.http.params.CoreConnectionPNames;
 
 import static io.restassured.RestAssured.given;
 
-public class Outlets {
+public class EntityRule {
+    public static Response GetEntityRuleDetails() {
 
-    public static Response Getoutlets() {
-
+        //prerequisite
         Response response = given()
+                //request
                 .when().log().all()
-                .get(Routes.getOutletAndChildOutlet("2"));  // call dynamic method instead of static variable
+                .get(Routes.getEntityRuleDetails("1"));
         return response;
     }public static Response GetOutletByIdWithTimeout() {
         Response response = given()
@@ -22,7 +22,7 @@ public class Outlets {
                         .setParam(CoreConnectionPNames.CONNECTION_TIMEOUT, 5000)
                         .setParam(CoreConnectionPNames.SO_TIMEOUT, 5000)))
                 .when()
-                .get(Routes.getOutletAndChildOutlet("2"));
+                .get(Routes.getEntityRuleDetails("1"));
 
         return response;
     }

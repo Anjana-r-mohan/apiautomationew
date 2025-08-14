@@ -16,7 +16,7 @@ public class Generate_Token {
 
         Response response = given()
                 .header("Content-Type", "application/xml")
-                .body("<User><username>bizomqa</username><password>mobisy</password></User>")
+                .body("<User><username>retailtwoadmin</username><password>mobisy</password></User>")
                 .when()
                 .post("https://devapi.bizomdev.in/oauth/directLogin/xml");
 

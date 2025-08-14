@@ -1,45 +1,38 @@
 package com.Retailer.Test;
 
-import com.Retailer.Endpoints.Outlets;
-import com.Retailer.Utilities.ApiTestUtils;
 
+import com.Retailer.Endpoints.skunits;
+import com.Retailer.Utilities.ApiTestUtils;
 import io.restassured.RestAssured;
 import io.restassured.config.HttpClientConfig;
 import io.restassured.response.Response;
 import org.apache.http.params.CoreConnectionPNames;
-
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-
-
-@Listeners(com.Retailer.Utilities.TestListener.class)
-public class OutletTest {
+public class Skunits_WarehouseTest {
     private Response response;
-
     @BeforeClass
     public void setup() {
-        // Set connection and socket timeout to 5000ms (5 seconds)
+
         RestAssured.config = RestAssured.config()
                 .httpClient(HttpClientConfig.httpClientConfig()
                         .setParam(CoreConnectionPNames.CONNECTION_TIMEOUT, 5000)
                         .setParam(CoreConnectionPNames.SO_TIMEOUT, 5000));
 
-        response = Outlets.Getoutlets();
+        response = skunits.getBrandWiseWarehouseSkus();
     }
 
     @Test(priority = 1)
-    public void GetoutletTest() {
+    public void getBrandWiseWarehouseSkusTest() {
         ApiTestUtils.assertStatusCode200(response);
     }
 
     @Test
     public void validateOutletSchema() {
-        ApiTestUtils.validateJsonSchema(response, "schemas/outlet_schema.json");
+        ApiTestUtils.validateJsonSchema(response, "schemas/Brandwiseskus_schema.json");
 
     }
-
 
     @Test
     public void validateApiTimeoutWithinFiveSeconds() {
